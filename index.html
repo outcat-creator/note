@@ -35,6 +35,7 @@
 
 <h1>我的餘額08:40</h1>
 <button onclick="loadData()">更新資料</button>
+  <p id="time" style="text-align:center;color:#666;"></P>
 
 <div id="list"></div>
 
@@ -56,9 +57,13 @@
         <strong>${row.餘額}</strong>
       `;
       list.appendChild(div);
+      //顯示最後更新時間
+      const now = new Data();
+      document.getElementById("time").innerText= "最後更新:" + now.toLocaleString();
+      
     });
   }
-
+  //一打開就更新
   loadData();
 </script>
 
