@@ -1,7 +1,7 @@
 <!DOCTYPE>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>記帳</title>
+<title>倉庫</title>
 
 <style>
 body {
@@ -23,7 +23,7 @@ body {
 <div id="list"></div>
 
 <script>
-const API_URL = "https://script.google.com/macros/s/AKfycbz9IwmCMlitOguVwfjPWpcVWEDBu-hKy-5v_kzijsklsWAM4JE1AmdPhsMp2oQIK6WJ/exec?key=notewebapp";
+const API_URL = "https://script.google.com/macros/s/AKfycbztrqHbLXZWyWVHa37kN3gisBS0w-PDfcMy695wJLlTj6-6AV6Kd3NMIM1GQSk1lq53/exec?key=notewebapp";
 
 fetch(API_URL)
   .then(r => r.json())
@@ -32,8 +32,8 @@ fetch(API_URL)
     data.forEach(row => {
       html += `
         <div class="row">
-          <span>${row.項目}</span>
-          <strong>${row.餘額}</strong>
+          <span>${row.品項}</span>
+          <strong>${row.庫存數}</strong>
         </div>
       `;
     });
