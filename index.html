@@ -25,7 +25,7 @@ body {
 <script>
 const API_URL = "https://script.google.com/macros/s/AKfycbzZKZvxyRMoFBPyWTdnhepDw2FY2l64PlFLsapsYlreV2C4imlPflwMzrfQ59HBczI/exec?key=noteweb";
 
-fetch(API_URL)
+fetch(API_URL + "&t=" + new Date() .getTime())
   .then(r => r.json())
   .then(data => {
     let html = "";
@@ -33,11 +33,15 @@ fetch(API_URL)
       html += `
         <div class="row">
           <span>${row.品項}</span>
-          <strong>${row.庫存數}</strong>
+          <span>${row.庫存數}</span>
         </div>
       `;
     });
     document.getElementById("list").innerHTML = html;
+  })
+  .catch(err => {
+    document.getElementById("list").innerHTML = "<p>讀資料失敗</p>";
+    console.error(err);
   });
 </script>
 
