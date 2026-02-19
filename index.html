@@ -32,8 +32,8 @@ fetch(API_URL + "&t=" + new Date() .getTime())
     data.forEach(row => {
       html += `
         <div class="row">
-          <span>${item.品項}</span>
-          <span>${item.庫存數}</span>
+          <span>${data.品項}</span>
+          <span>${data.庫存數}</span>
         </div>
       `;
     });
